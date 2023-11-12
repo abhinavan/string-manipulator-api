@@ -37,7 +37,7 @@ jobs:
       run: docker login -u abhinana -p Abhinav1#
     - name: Build and Push Docker Image
       run: |
-        docker build -t abhinana/spring-manipulator-api:latest .
+        docker build -t abhinana/spring-manipulator-api:latest
         docker login -u abhinana -p Abhinav1#
         docker push abhinana/spring-manipulator-api:latest    
 
