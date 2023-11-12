@@ -33,13 +33,23 @@ jobs:
 #      uses: docker/setup-docker@v2
 #      with:
 #        docker-layer-caching: true
-    - name: Docker Login
-      run: docker login -u abhinana -p Abhinav1#
-    - name: Build and Push Docker Image
-      run: |
-        docker build -t abhinana/spring-manipulator-api:latest
-        docker login -u abhinana -p Abhinav1#
-        docker push abhinana/spring-manipulator-api:latest    
+#    - name: Docker Login
+#      run: docker login -u abhinana -p Abhinav1#
+#    - name: Build and Push Docker Image
+#      run: |
+#        docker build -t abhinana/spring-manipulator-api:latest
+#        docker login -u abhinana -p Abhinav1#
+#        docker push abhinana/spring-manipulator-api:latest
+    - name: Docker Build & Push Action
+      uses: mr-smithers-excellent/docker-build-push@v6.2
+      with:
+        username: abhinana
+        password: Abhinav1#
+        image: abhinana/spring-manipulator-api
+        tags: v1, latest
+        dockerFile: Dockerfile.ci
+        registry: registry-url.io
+
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
