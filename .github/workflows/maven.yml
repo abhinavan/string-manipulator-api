@@ -43,7 +43,7 @@ jobs:
     - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v6.2
       with:
-        image: registry-url.io/abhinana/spring-manipulator-api
+        image: docker.io/abhinana/spring-manipulator-api
         tags: latest
         registry: registry-url.io
         dockerFile: Dockerfile
