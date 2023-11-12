@@ -73,8 +73,8 @@ jobs:
       env:
         JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.9-9/x64
         JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.9-9/x64
-        DOCKER_USERNAME: abhinana
-        DOCKER_PASSWORD: Abhinav1#
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKER_LOGIN_SERVER: docker.io
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
