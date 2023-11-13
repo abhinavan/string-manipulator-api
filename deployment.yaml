@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: string-manipulator-api
+spec:
+  selector:
+    matchLabels:
+        app: string-manipulator-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: string-manipulator-api
+    spec:
+      containers:
+        - name: string-manipulator-api
+          image: abhinana/spring-manipulator-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
